@@ -1,0 +1,9 @@
+// create new project
+// routing not needed for simple apps
+ng new my-first-angular-app --no-strict --standalone false --routing false
+
+// navigate into project directory
+cd my-first-angular-app
+
+// serve the application
+ng serve
