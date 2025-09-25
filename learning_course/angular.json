@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "week1": {
+    "learning_course": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -52,10 +52,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "week1:build:production"
+              "buildTarget": "learning_course:build:production"
             },
             "development": {
-              "buildTarget": "week1:build:development"
+              "buildTarget": "learning_course:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,5 +79,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
