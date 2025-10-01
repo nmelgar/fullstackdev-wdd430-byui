@@ -8,3 +8,7 @@
 <input type="text" class="form-control" (input)="onUpdateUserName($event)" />
 <button class="btn btn-primary" (click)="onUpdateUserName($event)">Update Username</button>
 <p>{{ userName }}</p>
+
+<hr>
+
+<p *ngIf="serverCreated">Sever was created, server is  {{ serverName }} </p>
