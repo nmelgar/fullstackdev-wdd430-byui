@@ -1,1 +1,27 @@
-<p>contact-list works!</p>
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success">New Contact</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    @for (contact of contacts; track contact.id){
+    <div class="card" style="width: 18rem">
+      <img
+        [src]="contact.imageUrl"
+        class="card-img-top"
+        class="img-responsive"
+        [alt]="contact.name"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ contact.name }}</h5>
+        <p class="card-text">{{ contact.email }}</p>
+        <a href="#" class="btn btn-primary">Contact Details</a>
+      </div>
+    </div>
+
+    <hr />
+    }
+    <app-contact-item></app-contact-item>
+  </div>
+</div>
