@@ -3,18 +3,22 @@
     <h2 class="mb-0">Contacts</h2>
     <button class="btn btn-success">New Contact</button>
   </div>
-</div>
-<div class="row">
-  <div class="col-12">
-    <ul class="list-group">
-      @for (contact of contacts; track contact.id){
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="#">{{ contact.name }}</a>
-        <img [src]="contact.imageUrl" [alt]="contact.name + ' image'" class="contact-list-image" />
-      </li>
-      }
-    </ul>
-    <!-- <app-contact-item></app-contact-item> -->
+  <div class="row">
+    <div class="col-12">
+      <ul class="list-group">
+        @for (contact of contacts; track contact.id){
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <a href="#">{{ contact.name }}</a>
+          <img
+            [src]="contact.imageUrl"
+            [alt]="contact.name + ' image'"
+            class="contact-list-image"
+          />
+        </li>
+        }
+      </ul>
+      <!-- <app-contact-item></app-contact-item> -->
+    </div>
   </div>
 </div>
 
