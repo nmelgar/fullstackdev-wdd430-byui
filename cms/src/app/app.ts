@@ -4,12 +4,12 @@ import { HeaderComponent } from './header/header';
 import { Contacts } from './contacts/contacts';
 import { ContactDetail } from './contacts/contact-detail/contact-detail';
 import { ContactList } from './contacts/contact-list/contact-list';
-import { ContactItem } from './contacts/contact-list/contact-item/contact-item';
+import { ContactItem } from './contacts/contact-item/contact-item';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, Contacts, ContactDetail, ContactList, ContactItem, RouterOutlet],
+  imports: [HeaderComponent, Contacts],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

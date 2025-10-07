@@ -1,0 +1,14 @@
+.contact-list-image {
+  /* fixed size for the image */
+  width: 40px;
+  height: 40px;
+
+  /* make image circular */
+  border-radius: 50%;
+
+  /* image fills the area without distortion */
+  object-fit: cover;
+  
+  /* margin to separate it from the name */
+  margin-left: 10px;
+}
