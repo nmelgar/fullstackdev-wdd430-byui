@@ -7,7 +7,10 @@
     <div class="col-12">
       <ul class="list-group">
         @for (contact of contacts; track contact.id){
-        <app-contact-item [contact]="contact"></app-contact-item>
+          <app-contact-item
+            [contact]="contact"
+            (click)="onSelectContact(contact)">
+          </app-contact-item>
         }
       </ul>
     </div>

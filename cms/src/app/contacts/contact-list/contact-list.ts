@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Contact } from '../contact.model';
 import { ContactItem } from '../contact-item/contact-item';
 
@@ -19,11 +19,19 @@ export class ContactList {
     ),
 
     new Contact(
-      '234',
+      '235',
       'John Does',
       'qwer@gmail.com',
       '801-555-5555',
       'https://www.w3schools.com/howto/img_avatar.png'
     ),
   ];
+  
+  @Output() selectedContactEvent = new EventEmitter<Contact>();
+
+  onSelectContact(contact: Contact) {
+    console.log('Contact clicked and emitting:', contact.name); 
+    this.selectedContactEvent.emit(contact);
+  }
+
 }
