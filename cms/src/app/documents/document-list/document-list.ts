@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { DocumentItem } from '../document-item/document-item';
 import { Document } from '../document.model';
 
 @Component({
   selector: 'app-document-list',
-  imports: [DocumentItem],
+  imports: [DocumentItem, CommonModule],
   templateUrl: './document-list.html',
   styleUrl: './document-list.css',
 })
