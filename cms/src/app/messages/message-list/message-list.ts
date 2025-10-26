@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MessageEdit } from '../message-edit/message-edit';
 import { MessageItem } from '../message-item/message-item';
 import { Message } from '../message.model';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-message-list',
@@ -10,13 +11,14 @@ import { Message } from '../message.model';
   templateUrl: './message-list.html',
   styleUrl: './message-list.css',
 })
-export class MessageList {
-    messages: Message[] = [
-    new Message(1, 'Hello', 'hellllllooooo?', 'Me'),
-    new Message(2, 'Reminder', 'Hey this is a reminder.', 'You'),
-    new Message(3, 'Greetings', 'Greeeetings', 'We')
-  ];
+export class MessageList implements OnInit {
+  messages: Message[] = [];
 
+  constructor(private messageService: MessageService) {}
+
+  ngOnInit(): void {
+    this.messages = this.messageService.getMessages();
+  }
   // method to add message to array
   onAddMessage(message: Message) {
     this.messages.push(message);
