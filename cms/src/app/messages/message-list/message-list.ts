@@ -18,10 +18,8 @@ export class MessageList implements OnInit {
 
   ngOnInit(): void {
     this.messages = this.messageService.getMessages();
-  }
-  // method to add message to array
-  onAddMessage(message: Message) {
-    this.messages.push(message);
-    console.log('Message added:', message);
+    this.messageService.messageChangedEvent.subscribe((messages: Message[]) => {
+      this.messages = messages;
+    });
   }
 }
