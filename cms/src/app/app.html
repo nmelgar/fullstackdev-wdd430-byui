@@ -1,21 +1,10 @@
 <div class="container-fluid">
-  <app-header (selectedFeatureEvent)="switchView($event)"></app-header>
+  <app-header></app-header>
   <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
     <div class="container-fluid">
       <div class="container pull-left">
-        @switch (selectedFeature()) { @case ('documents') {
-        <app-documents></app-documents>
-        } @case ('messages') {
-        <app-messages></app-messages>
-        } @case ('contacts') {
-        <app-contacts></app-contacts>
-        } @default {
-        <div
-          class="p-8 rounded-xl bg-gray-100 border border-gray-200 text-center text-gray-600 shadow-sm"
-        >
-          <p>Unknown feature selected.</p>
-        </div>
-        } }
+        <!-- router outlet will render Documents, Messages or Contacts based on the URL -->
+        <router-outlet></router-outlet>
       </div>
     </div>
   </div>

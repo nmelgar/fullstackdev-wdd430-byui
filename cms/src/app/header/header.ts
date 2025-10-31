@@ -1,16 +1,14 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { ToggleUserMenuDirective } from '../directives/toggle-user-menu.directive';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [ToggleUserMenuDirective],
+  imports: [ToggleUserMenuDirective, RouterLink, RouterLinkActive],
   templateUrl: './header.html',
   // styleUrl: './header.css'
 })
 export class HeaderComponent {
-  @Output() selectedFeatureEvent = new EventEmitter<string>();
-  onSelected(selectedEvent: string): void {
-    this.selectedFeatureEvent.emit(selectedEvent);
-  }
+  // navigation is handled via routerLink in the template
 }
