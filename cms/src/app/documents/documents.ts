@@ -1,24 +1,13 @@
 import { Component } from '@angular/core';
-import { Document } from './document.model';
+import { RouterOutlet } from '@angular/router';
 import { DocumentList } from './document-list/document-list';
-import { DocumentDetail } from './document-detail/document-detail';
-import { DocumentService } from './document.service';
 
 @Component({
   selector: 'app-documents',
   standalone: true,
-  imports: [DocumentDetail, DocumentList],
+  imports: [DocumentList, RouterOutlet],
   templateUrl: './documents.html',
   styleUrl: './documents.css',
 })
-export class Documents {
-  selectedDocument: Document | undefined;
+export class Documents {}
 
-  constructor(private documentService: DocumentService) {}
-
-  ngOnInit(): void {
-    this.documentService.documentSelectEvent.subscribe((document: Document) => {
-      this.selectedDocument = document;
-    });
-  }
-}
